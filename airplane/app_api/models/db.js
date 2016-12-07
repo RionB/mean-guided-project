@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
 //var dbURI = 'mongodb://localhost/airplane';
-var dbURI = 'mongodb://airplane:airplane@ds157487.mlab.com:57487/ahuimanu';
+var dbURI = 'mongodb://airplane:airplane@ds129038.mlab.com:29038/mean-guided-project';
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGODB_URI;
 }

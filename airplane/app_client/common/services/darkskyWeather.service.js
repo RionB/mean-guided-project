@@ -13,7 +13,6 @@
                 .success(function(data) {
                     var keys = data;
                     console.log(keys);
-                    //f53f715588d39379ae80bc9bc045c885
                     var darkskykey = keys.DARK_SKY_KEY;
                     return $http.jsonp('https://api.darksky.net/forecast/' + darkskykey + '/' +
                         lat + ',' + lon + "?callback=JSON_CALLBACK", {
@@ -26,7 +25,7 @@
         };
         
         var getWeather2 =  function(lat, lon){
-            return $http.jsonp('https://api.darksky.net/forecast/f53f715588d39379ae80bc9bc045c885/' +
+            return $http.jsonp('https://api.darksky.net/forecast/2a3778b155be84fd994dcfbf2eabed7a/' +
                 lat + ',' + lon + "?callback=JSON_CALLBACK", {
                     jsonpCallbackParam: 'callback'
                 });        
