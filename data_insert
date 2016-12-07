@@ -1,0 +1,1275 @@
+var climbTable = new mongoose.Schema({
+	weight: Number,
+	vfri5: Number,
+	vfri10: Number,
+	vfri15: Number,
+	vclmb: Number
+});
+
+db.ClimbData.insert(
+   [
+     { weight: 18000, vfri5: 116, vfri10: 110, vfri15: 107, vclmb: 130 },
+     { weight: 20000, vfri5: 120, vfri10: 112, vfri15: 109, vclmb: 131 },
+     { weight: 22000, vfri5: 126, vfri10: 118, vfri15: 115, vclmb: 137 },
+     { weight: 24000, vfri5: 132, vfri10: 123, vfri15: 120, vclmb: 143 },
+     { weight: 26000, vfri5: 137, vfri10: 128, vfri15: 125, vclmb: 148 },
+     { weight: 28000, vfri5: 142, vfri10: 134, vfri15: 130, vclmb: 154 },
+     { weight: 29000, vfri5: 146, vfri10: 137, vfri15: 133, vclmb: 158 },
+   ]
+)
+
+var takeoffTable = new mongoose.Schema({
+	flaps: Number,
+	weight: Number,
+	above20: Boolean,
+	altitude: Number,
+	vr: Number,
+	v2: Number
+});
+
+db.TakeoffData.insert(
+    [
+
+        /////////////////////////////////////////////////////////////////////////////
+        //// FLAPS 5 ////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////    
+    
+        // BELOW ////////////////////////////////////////////////////////////////////      
+        //Flap 5, altitude 0, below
+        { flaps: 5, weight: 18000, above20: false, altitude: 0, vr: 102, v2: 116 },
+        { flaps: 5, weight: 20000, above20: false, altitude: 0, vr: 105, v2: 115 },
+        { flaps: 5, weight: 22000, above20: false, altitude: 0, vr: 112, v2: 117 },
+        { flaps: 5, weight: 24000, above20: false, altitude: 0, vr: 118, v2: 122 },
+        { flaps: 5, weight: 26000, above20: false, altitude: 0, vr: 124, v2: 127 },
+        { flaps: 5, weight: 28000, above20: false, altitude: 0, vr: 130, v2: 132 },
+        { flaps: 5, weight: 29000, above20: false, altitude: 0, vr: 133, v2: 135 },
+
+        //Flap 5, altitude 2000, below
+        { flaps: 5, weight: 18000, above20: false, altitude: 2000, vr: 102, v2: 115 },
+        { flaps: 5, weight: 20000, above20: false, altitude: 2000, vr: 106, v2: 114 },
+        { flaps: 5, weight: 22000, above20: false, altitude: 2000, vr: 113, v2: 117 },
+        { flaps: 5, weight: 24000, above20: false, altitude: 2000, vr: 119, v2: 122 },
+        { flaps: 5, weight: 26000, above20: false, altitude: 2000, vr: 125, v2: 127 },
+        { flaps: 5, weight: 28000, above20: false, altitude: 2000, vr: 131, v2: 132 },
+        { flaps: 5, weight: 29000, above20: false, altitude: 2000, vr: 134, v2: 135 },
+
+        //Flap 5, altitude 4000, below
+        { flaps: 5, weight: 18000, above20: false, altitude: 4000, vr: 102, v2: 115 },
+        { flaps: 5, weight: 20000, above20: false, altitude: 4000, vr: 107, v2: 114 },
+        { flaps: 5, weight: 22000, above20: false, altitude: 4000, vr: 113, v2: 117 },
+        { flaps: 5, weight: 24000, above20: false, altitude: 4000, vr: 120, v2: 122 },
+        { flaps: 5, weight: 26000, above20: false, altitude: 4000, vr: 126, v2: 127 },
+        { flaps: 5, weight: 28000, above20: false, altitude: 4000, vr: 131, v2: 132 },
+        { flaps: 5, weight: 29000, above20: false, altitude: 4000, vr: 135, v2: 135 }, 
+
+        //Flap 5, altitude 6000, below
+        { flaps: 5, weight: 18000, above20: false, altitude: 6000, vr: 102, v2: 115 },
+        { flaps: 5, weight: 20000, above20: false, altitude: 6000, vr: 107, v2: 114 },
+        { flaps: 5, weight: 22000, above20: false, altitude: 6000, vr: 113, v2: 117 },
+        { flaps: 5, weight: 24000, above20: false, altitude: 6000, vr: 120, v2: 122 },
+        { flaps: 5, weight: 26000, above20: false, altitude: 6000, vr: 126, v2: 127 },
+        { flaps: 5, weight: 28000, above20: false, altitude: 6000, vr: 131, v2: 132 },
+        { flaps: 5, weight: 29000, above20: false, altitude: 6000, vr: 135, v2: 135 },
+
+        //Flap 5, altitude 8000, below
+        { flaps: 5, weight: 18000, above20: false, altitude: 8000, vr: 102, v2: 112 },
+        { flaps: 5, weight: 20000, above20: false, altitude: 8000, vr: 108, v2: 112 },
+        { flaps: 5, weight: 22000, above20: false, altitude: 8000, vr: 115, v2: 117 },
+        { flaps: 5, weight: 24000, above20: false, altitude: 8000, vr: 121, v2: 122 },
+        { flaps: 5, weight: 26000, above20: false, altitude: 8000, vr: 127, v2: 127 },
+        { flaps: 5, weight: 28000, above20: false, altitude: 8000, vr: 133, v2: 132 },
+        { flaps: 5, weight: 29000, above20: false, altitude: 8000, vr: 137, v2: 135 },
+
+        //Flap 5, altitude 10000, below
+        { flaps: 5, weight: 18000, above20: false, altitude: 10000, vr: 103, v2: 111 },
+        { flaps: 5, weight: 20000, above20: false, altitude: 10000, vr: 110, v2: 111 },
+        { flaps: 5, weight: 22000, above20: false, altitude: 10000, vr: 116, v2: 117 },
+        { flaps: 5, weight: 24000, above20: false, altitude: 10000, vr: 122, v2: 122 },
+        { flaps: 5, weight: 26000, above20: false, altitude: 10000, vr: 128, v2: 127 },
+        { flaps: 5, weight: 28000, above20: false, altitude: 10000, vr: 134, v2: 132 },
+        { flaps: 5, weight: 29000, above20: false, altitude: 10000, vr: 138, v2: 135 },
+        
+        // ABOVE ////////////////////////////////////////////////////////////////////
+        //Flap 5, altitude 0, above
+        { flaps: 5, weight: 18000, above20: true, altitude: 0, vr: 102, v2: 114 },
+        { flaps: 5, weight: 20000, above20: true, altitude: 0, vr: 107, v2: 113 },
+        { flaps: 5, weight: 22000, above20: true, altitude: 0, vr: 113, v2: 117 },
+        { flaps: 5, weight: 24000, above20: true, altitude: 0, vr: 120, v2: 122 },
+        { flaps: 5, weight: 26000, above20: true, altitude: 0, vr: 126, v2: 127 },
+        { flaps: 5, weight: 28000, above20: true, altitude: 0, vr: 131, v2: 132 },
+        { flaps: 5, weight: 29000, above20: true, altitude: 0, vr: 135, v2: 135 },
+        
+        //Flap 5, altitude 2000, above
+        { flaps: 5, weight: 18000, above20: true, altitude: 2000, vr: 102, v2: 113 },
+        { flaps: 5, weight: 20000, above20: true, altitude: 2000, vr: 108, v2: 112 },
+        { flaps: 5, weight: 22000, above20: true, altitude: 2000, vr: 114, v2: 117 },
+        { flaps: 5, weight: 24000, above20: true, altitude: 2000, vr: 120, v2: 122 },
+        { flaps: 5, weight: 26000, above20: true, altitude: 2000, vr: 126, v2: 127 },
+        { flaps: 5, weight: 28000, above20: true, altitude: 2000, vr: 132, v2: 132 },
+        { flaps: 5, weight: 29000, above20: true, altitude: 2000, vr: 136, v2: 135 },
+        
+        //Flap 5, altitude 4000, above
+        { flaps: 5, weight: 18000, above20: true, altitude: 4000, vr: 102, v2: 112 },
+        { flaps: 5, weight: 20000, above20: true, altitude: 4000, vr: 108, v2: 112 },
+        { flaps: 5, weight: 22000, above20: true, altitude: 4000, vr: 115, v2: 117 },
+        { flaps: 5, weight: 24000, above20: true, altitude: 4000, vr: 121, v2: 122 },
+        { flaps: 5, weight: 26000, above20: true, altitude: 4000, vr: 127, v2: 127 },
+        { flaps: 5, weight: 28000, above20: true, altitude: 4000, vr: 133, v2: 132 },
+        { flaps: 5, weight: 29000, above20: true, altitude: 4000, vr: 137, v2: 135 },
+        
+        //Flap 5, altitude 6000, above
+        { flaps: 5, weight: 18000, above20: true, altitude: 6000, vr: 103, v2: 111 },
+        { flaps: 5, weight: 20000, above20: true, altitude: 6000, vr: 110, v2: 111 },
+        { flaps: 5, weight: 22000, above20: true, altitude: 6000, vr: 116, v2: 117 },
+        { flaps: 5, weight: 24000, above20: true, altitude: 6000, vr: 122, v2: 122 },
+        { flaps: 5, weight: 26000, above20: true, altitude: 6000, vr: 128, v2: 127 },
+        { flaps: 5, weight: 28000, above20: true, altitude: 6000, vr: 134, v2: 132 },
+        { flaps: 5, weight: 29000, above20: true, altitude: 6000, vr: 138, v2: 135 },
+        
+        //Flap 5, altitude 8000, above
+        { flaps: 5, weight: 18000, above20: true, altitude: 8000, vr: 103, v2: 110 },
+        { flaps: 5, weight: 20000, above20: true, altitude: 8000, vr: 110, v2: 111 },
+        { flaps: 5, weight: 22000, above20: true, altitude: 8000, vr: 117, v2: 117 },
+        { flaps: 5, weight: 24000, above20: true, altitude: 8000, vr: 123, v2: 122 },
+        { flaps: 5, weight: 26000, above20: true, altitude: 8000, vr: 129, v2: 127 },
+        { flaps: 5, weight: 28000, above20: true, altitude: 8000, vr: 135, v2: 132 },
+        { flaps: 5, weight: 29000, above20: true, altitude: 8000, vr: 138, v2: 135 },
+        
+        //Flap 5, altitude 10000, above
+        { flaps: 5, weight: 18000, above20: true, altitude: 10000, vr: 105, v2: 109 },
+        { flaps: 5, weight: 20000, above20: true, altitude: 10000, vr: 112, v2: 111 },
+        { flaps: 5, weight: 22000, above20: true, altitude: 10000, vr: 118, v2: 117 },
+        { flaps: 5, weight: 24000, above20: true, altitude: 10000, vr: 124, v2: 122 },
+        { flaps: 5, weight: 26000, above20: true, altitude: 10000, vr: 130, v2: 127 },
+        { flaps: 5, weight: 28000, above20: true, altitude: 10000, vr: 136, v2: 132 },
+        { flaps: 5, weight: 29000, above20: true, altitude: 10000, vr: 140, v2: 135 },
+        
+        /////////////////////////////////////////////////////////////////////////////
+        //// FLAPS 10 ///////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////
+        
+        // BELOW ////////////////////////////////////////////////////////////////////        
+        //Flap 10, altitude 0, below
+        { flaps: 10, weight: 18000, above20: false, altitude: 0, vr: 100, v2: 111 },
+        { flaps: 10, weight: 20000, above20: false, altitude: 0, vr: 100, v2: 110 },
+        { flaps: 10, weight: 22000, above20: false, altitude: 0, vr: 103, v2: 109 },
+        { flaps: 10, weight: 24000, above20: false, altitude: 0, vr: 109, v2: 113 },
+        { flaps: 10, weight: 26000, above20: false, altitude: 0, vr: 115, v2: 118 },
+        { flaps: 10, weight: 28000, above20: false, altitude: 0, vr: 120, v2: 122 },
+        { flaps: 10, weight: 29000, above20: false, altitude: 0, vr: 124, v2: 125 },
+
+        //Flap 10, altitude 2000, below
+        { flaps: 10, weight: 18000, above20: false, altitude: 2000, vr: 100, v2: 110 },
+        { flaps: 10, weight: 20000, above20: false, altitude: 2000, vr: 100, v2: 109 },
+        { flaps: 10, weight: 22000, above20: false, altitude: 2000, vr: 105, v2: 109 },
+        { flaps: 10, weight: 24000, above20: false, altitude: 2000, vr: 110, v2: 113 },
+        { flaps: 10, weight: 26000, above20: false, altitude: 2000, vr: 116, v2: 118 },
+        { flaps: 10, weight: 28000, above20: false, altitude: 2000, vr: 121, v2: 122 },
+        { flaps: 10, weight: 29000, above20: false, altitude: 2000, vr: 125, v2: 125 },
+
+        //Flap 10, altitude 4000, below
+        { flaps: 10, weight: 18000, above20: false, altitude: 4000, vr: 100, v2: 110 },
+        { flaps: 10, weight: 20000, above20: false, altitude: 4000, vr: 100, v2: 109 },
+        { flaps: 10, weight: 22000, above20: false, altitude: 4000, vr: 105, v2: 108 },
+        { flaps: 10, weight: 24000, above20: false, altitude: 4000, vr: 111, v2: 113 },
+        { flaps: 10, weight: 26000, above20: false, altitude: 4000, vr: 116, v2: 118 },
+        { flaps: 10, weight: 28000, above20: false, altitude: 4000, vr: 122, v2: 122 },
+        { flaps: 10, weight: 29000, above20: false, altitude: 4000, vr: 125, v2: 125 }, 
+
+        //Flap 10, altitude 6000, below
+        { flaps: 10, weight: 18000, above20: false, altitude: 6000, vr: 100, v2: 109 },
+        { flaps: 10, weight: 20000, above20: false, altitude: 6000, vr: 100, v2: 108 },
+        { flaps: 10, weight: 22000, above20: false, altitude: 6000, vr: 105, v2: 108 },
+        { flaps: 10, weight: 24000, above20: false, altitude: 6000, vr: 111, v2: 113 },
+        { flaps: 10, weight: 26000, above20: false, altitude: 6000, vr: 117, v2: 118 },
+        { flaps: 10, weight: 28000, above20: false, altitude: 6000, vr: 122, v2: 122 },
+        { flaps: 10, weight: 29000, above20: false, altitude: 6000, vr: 126, v2: 125 },
+
+        //Flap 10, altitude 8000, below
+        { flaps: 10, weight: 18000, above20: false, altitude: 8000, vr: 100, v2: 108 },
+        { flaps: 10, weight: 20000, above20: false, altitude: 8000, vr: 100, v2: 107 },
+        { flaps: 10, weight: 22000, above20: false, altitude: 8000, vr: 106, v2: 108 },
+        { flaps: 10, weight: 24000, above20: false, altitude: 8000, vr: 112, v2: 113 },
+        { flaps: 10, weight: 26000, above20: false, altitude: 8000, vr: 118, v2: 118 },
+        { flaps: 10, weight: 28000, above20: false, altitude: 8000, vr: 123, v2: 122 },
+        { flaps: 10, weight: 29000, above20: false, altitude: 8000, vr: 127, v2: 125 },
+
+        //Flap 10, altitude 10000, below
+        { flaps: 10, weight: 18000, above20: false, altitude: 10000, vr: 100, v2: 107 },
+        { flaps: 10, weight: 20000, above20: false, altitude: 10000, vr: 101, v2: 106 },
+        { flaps: 10, weight: 22000, above20: false, altitude: 10000, vr: 108, v2: 108 },
+        { flaps: 10, weight: 24000, above20: false, altitude: 10000, vr: 113, v2: 113 },
+        { flaps: 10, weight: 26000, above20: false, altitude: 10000, vr: 119, v2: 118 },
+        { flaps: 10, weight: 28000, above20: false, altitude: 10000, vr: 124, v2: 122 },
+        { flaps: 10, weight: 29000, above20: false, altitude: 10000, vr: 128, v2: 125 },
+        
+        // ABOVE ////////////////////////////////////////////////////////////////////
+        //Flap 10, altitude 0, above
+        { flaps: 10, weight: 18000, above20: true, altitude: 0, vr: 100, v2: 109 },
+        { flaps: 10, weight: 20000, above20: true, altitude: 0, vr: 100, v2: 108 },
+        { flaps: 10, weight: 22000, above20: true, altitude: 0, vr: 104, v2: 108 },
+        { flaps: 10, weight: 24000, above20: true, altitude: 0, vr: 110, v2: 113 },
+        { flaps: 10, weight: 26000, above20: true, altitude: 0, vr: 116, v2: 118 },
+        { flaps: 10, weight: 28000, above20: true, altitude: 0, vr: 121, v2: 122 },
+        { flaps: 10, weight: 29000, above20: true, altitude: 0, vr: 125, v2: 125 },
+        
+        //Flap 10, altitude 2000, above
+        { flaps: 10, weight: 18000, above20: true, altitude: 2000, vr: 100, v2: 109 },
+        { flaps: 10, weight: 20000, above20: true, altitude: 2000, vr: 100, v2: 108 },
+        { flaps: 10, weight: 22000, above20: true, altitude: 2000, vr: 106, v2: 108 },
+        { flaps: 10, weight: 24000, above20: true, altitude: 2000, vr: 111, v2: 113 },
+        { flaps: 10, weight: 26000, above20: true, altitude: 2000, vr: 117, v2: 118 },
+        { flaps: 10, weight: 28000, above20: true, altitude: 2000, vr: 122, v2: 122 },
+        { flaps: 10, weight: 29000, above20: true, altitude: 2000, vr: 125, v2: 125 },
+        
+        //Flap 10, altitude 4000, above
+        { flaps: 10, weight: 18000, above20: true, altitude: 4000, vr: 100, v2: 109 },
+        { flaps: 10, weight: 20000, above20: true, altitude: 4000, vr: 100, v2: 107 },
+        { flaps: 10, weight: 22000, above20: true, altitude: 4000, vr: 106, v2: 108 },
+        { flaps: 10, weight: 24000, above20: true, altitude: 4000, vr: 112, v2: 113 },
+        { flaps: 10, weight: 26000, above20: true, altitude: 4000, vr: 117, v2: 118 },
+        { flaps: 10, weight: 28000, above20: true, altitude: 4000, vr: 123, v2: 122 },
+        { flaps: 10, weight: 29000, above20: true, altitude: 4000, vr: 126, v2: 125 },
+        
+        //Flap 10, altitude 6000, above
+        { flaps: 10, weight: 18000, above20: true, altitude: 6000, vr: 100, v2: 107 },
+        { flaps: 10, weight: 20000, above20: true, altitude: 6000, vr: 100, v2: 106 },
+        { flaps: 10, weight: 22000, above20: true, altitude: 6000, vr: 106, v2: 108 },
+        { flaps: 10, weight: 24000, above20: true, altitude: 6000, vr: 112, v2: 113 },
+        { flaps: 10, weight: 26000, above20: true, altitude: 6000, vr: 118, v2: 118 },
+        { flaps: 10, weight: 28000, above20: true, altitude: 6000, vr: 123, v2: 122 },
+        { flaps: 10, weight: 29000, above20: true, altitude: 6000, vr: 127, v2: 125 },
+        
+        //Flap 10, altitude 8000, above
+        { flaps: 10, weight: 18000, above20: true, altitude: 8000, vr: 100, v2: 106 },
+        { flaps: 10, weight: 20000, above20: true, altitude: 8000, vr: 100, v2: 105 },
+        { flaps: 10, weight: 22000, above20: true, altitude: 8000, vr: 106, v2: 108 },
+        { flaps: 10, weight: 24000, above20: true, altitude: 8000, vr: 112, v2: 113 },
+        { flaps: 10, weight: 26000, above20: true, altitude: 8000, vr: 118, v2: 118 },
+        { flaps: 10, weight: 28000, above20: true, altitude: 8000, vr: 123, v2: 122 },
+        { flaps: 10, weight: 29000, above20: true, altitude: 8000, vr: 127, v2: 125 },
+        
+        //Flap 10, altitude 10000, above
+        { flaps: 10, weight: 18000, above20: true, altitude: 10000, vr: 100, v2: 105 },
+        { flaps: 10, weight: 20000, above20: true, altitude: 10000, vr: 100, v2: 105 },
+        { flaps: 10, weight: 22000, above20: true, altitude: 10000, vr: 106, v2: 108 },
+        { flaps: 10, weight: 24000, above20: true, altitude: 10000, vr: 112, v2: 113 },
+        { flaps: 10, weight: 26000, above20: true, altitude: 10000, vr: 118, v2: 118 },
+        { flaps: 10, weight: 28000, above20: true, altitude: 10000, vr: 123, v2: 122 },
+        { flaps: 10, weight: 29000, above20: true, altitude: 10000, vr: 127, v2: 125 },        
+        
+        /////////////////////////////////////////////////////////////////////////////
+        //// FLAPS 15 ///////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////
+        
+        // BELOW ////////////////////////////////////////////////////////////////////        
+        //Flap 15, altitude 0, below
+        { flaps: 15, weight: 18000, above20: false, altitude: 0, vr:  98, v2: 106 },
+        { flaps: 15, weight: 20000, above20: false, altitude: 0, vr:  98, v2: 105 },
+        { flaps: 15, weight: 22000, above20: false, altitude: 0, vr: 100, v2: 104 },
+        { flaps: 15, weight: 24000, above20: false, altitude: 0, vr: 106, v2: 109 },
+        { flaps: 15, weight: 26000, above20: false, altitude: 0, vr: 111, v2: 113 },
+        { flaps: 15, weight: 28000, above20: false, altitude: 0, vr: 116, v2: 118 },
+        { flaps: 15, weight: 29000, above20: false, altitude: 0, vr: 119, v2: 120 },
+
+        //Flap 15, altitude 2000, below
+        { flaps: 15, weight: 18000, above20: false, altitude: 2000, vr:  98, v2: 106 },
+        { flaps: 15, weight: 20000, above20: false, altitude: 2000, vr:  98, v2: 105 },
+        { flaps: 15, weight: 22000, above20: false, altitude: 2000, vr: 101, v2: 104 },
+        { flaps: 15, weight: 24000, above20: false, altitude: 2000, vr: 106, v2: 109 },
+        { flaps: 15, weight: 26000, above20: false, altitude: 2000, vr: 112, v2: 113 },
+        { flaps: 15, weight: 28000, above20: false, altitude: 2000, vr: 117, v2: 118 },
+        { flaps: 15, weight: 29000, above20: false, altitude: 2000, vr: 120, v2: 120 },
+
+        //Flap 15, altitude 4000, below
+        { flaps: 15, weight: 18000, above20: false, altitude: 4000, vr:  98, v2: 105 },
+        { flaps: 15, weight: 20000, above20: false, altitude: 4000, vr:  98, v2: 104 },
+        { flaps: 15, weight: 22000, above20: false, altitude: 4000, vr: 101, v2: 104 },
+        { flaps: 15, weight: 24000, above20: false, altitude: 4000, vr: 107, v2: 109 },
+        { flaps: 15, weight: 26000, above20: false, altitude: 4000, vr: 112, v2: 113 },
+        { flaps: 15, weight: 28000, above20: false, altitude: 4000, vr: 117, v2: 118 },
+        { flaps: 15, weight: 29000, above20: false, altitude: 4000, vr: 120, v2: 120 }, 
+
+        //Flap 15, altitude 6000, below
+        { flaps: 15, weight: 18000, above20: false, altitude: 6000, vr:  98, v2: 104 },
+        { flaps: 15, weight: 20000, above20: false, altitude: 6000, vr:  98, v2: 103 },
+        { flaps: 15, weight: 22000, above20: false, altitude: 6000, vr: 102, v2: 104 },
+        { flaps: 15, weight: 24000, above20: false, altitude: 6000, vr: 108, v2: 109 },
+        { flaps: 15, weight: 26000, above20: false, altitude: 6000, vr: 113, v2: 113 },
+        { flaps: 15, weight: 28000, above20: false, altitude: 6000, vr: 118, v2: 118 },
+        { flaps: 15, weight: 29000, above20: false, altitude: 6000, vr: 121, v2: 120 },
+
+        //Flap 15, altitude 8000, below
+        { flaps: 15, weight: 18000, above20: false, altitude: 8000, vr:  98, v2: 103 },
+        { flaps: 15, weight: 20000, above20: false, altitude: 8000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 22000, above20: false, altitude: 8000, vr: 103, v2: 104 },
+        { flaps: 15, weight: 24000, above20: false, altitude: 8000, vr: 108, v2: 109 },
+        { flaps: 15, weight: 26000, above20: false, altitude: 8000, vr: 114, v2: 113 },
+        { flaps: 15, weight: 28000, above20: false, altitude: 8000, vr: 118, v2: 118 },
+        { flaps: 15, weight: 29000, above20: false, altitude: 8000, vr: 122, v2: 120 },
+
+        //Flap 15, altitude 10000, below
+        { flaps: 15, weight: 18000, above20: false, altitude: 10000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 20000, above20: false, altitude: 10000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 22000, above20: false, altitude: 10000, vr: 104, v2: 104 },
+        { flaps: 15, weight: 24000, above20: false, altitude: 10000, vr: 109, v2: 109 },
+        { flaps: 15, weight: 26000, above20: false, altitude: 10000, vr: 114, v2: 113 },
+        { flaps: 15, weight: 28000, above20: false, altitude: 10000, vr: 119, v2: 118 },
+        { flaps: 15, weight: 29000, above20: false, altitude: 10000, vr: 122, v2: 120 },
+        
+        // ABOVE ////////////////////////////////////////////////////////////////////
+        //Flap 15, altitude 0, above
+        { flaps: 15, weight: 18000, above20: true, altitude: 0, vr:  98, v2: 105 },
+        { flaps: 15, weight: 20000, above20: true, altitude: 0, vr:  98, v2: 103 },
+        { flaps: 15, weight: 22000, above20: true, altitude: 0, vr: 101, v2: 104 },
+        { flaps: 15, weight: 24000, above20: true, altitude: 0, vr: 107, v2: 109 },
+        { flaps: 15, weight: 26000, above20: true, altitude: 0, vr: 112, v2: 113 },
+        { flaps: 15, weight: 28000, above20: true, altitude: 0, vr: 117, v2: 118 },
+        { flaps: 15, weight: 29000, above20: true, altitude: 0, vr: 120, v2: 120 },
+        
+        //Flap 15, altitude 2000, above
+        { flaps: 15, weight: 18000, above20: true, altitude: 2000, vr:  98, v2: 104 },
+        { flaps: 15, weight: 20000, above20: true, altitude: 2000, vr:  98, v2: 103 },
+        { flaps: 15, weight: 22000, above20: true, altitude: 2000, vr: 102, v2: 104 },
+        { flaps: 15, weight: 24000, above20: true, altitude: 2000, vr: 108, v2: 109 },
+        { flaps: 15, weight: 26000, above20: true, altitude: 2000, vr: 113, v2: 113 },
+        { flaps: 15, weight: 28000, above20: true, altitude: 2000, vr: 118, v2: 118 },
+        { flaps: 15, weight: 29000, above20: true, altitude: 2000, vr: 121, v2: 120 },
+        
+        //Flap 15, altitude 4000, above
+        { flaps: 15, weight: 18000, above20: true, altitude: 4000, vr:  98, v2: 103 },
+        { flaps: 15, weight: 20000, above20: true, altitude: 4000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 22000, above20: true, altitude: 4000, vr: 103, v2: 104 },
+        { flaps: 15, weight: 24000, above20: true, altitude: 4000, vr: 108, v2: 109 },
+        { flaps: 15, weight: 26000, above20: true, altitude: 4000, vr: 114, v2: 113 },
+        { flaps: 15, weight: 28000, above20: true, altitude: 4000, vr: 119, v2: 118 },
+        { flaps: 15, weight: 29000, above20: true, altitude: 4000, vr: 121, v2: 120 },
+        
+        //Flap 15, altitude 6000, above
+        { flaps: 15, weight: 18000, above20: true, altitude: 6000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 20000, above20: true, altitude: 6000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 22000, above20: true, altitude: 6000, vr: 104, v2: 104 },
+        { flaps: 15, weight: 24000, above20: true, altitude: 6000, vr: 109, v2: 109 },
+        { flaps: 15, weight: 26000, above20: true, altitude: 6000, vr: 114, v2: 113 },
+        { flaps: 15, weight: 28000, above20: true, altitude: 6000, vr: 119, v2: 118 },
+        { flaps: 15, weight: 29000, above20: true, altitude: 6000, vr: 122, v2: 120 },
+        
+        //Flap 15, altitude 8000, above
+        { flaps: 15, weight: 18000, above20: true, altitude: 8000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 20000, above20: true, altitude: 8000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 22000, above20: true, altitude: 8000, vr: 104, v2: 104 },
+        { flaps: 15, weight: 24000, above20: true, altitude: 8000, vr: 110, v2: 109 },
+        { flaps: 15, weight: 26000, above20: true, altitude: 8000, vr: 115, v2: 113 },
+        { flaps: 15, weight: 28000, above20: true, altitude: 8000, vr: 120, v2: 118 },
+        { flaps: 15, weight: 29000, above20: true, altitude: 8000, vr: 123, v2: 120 },
+        
+        //Flap 15, altitude 10000, above
+        { flaps: 15, weight: 18000, above20: true, altitude: 10000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 20000, above20: true, altitude: 10000, vr:  98, v2: 102 },
+        { flaps: 15, weight: 22000, above20: true, altitude: 10000, vr: 104, v2: 104 },
+        { flaps: 15, weight: 24000, above20: true, altitude: 10000, vr: 110, v2: 109 },
+        { flaps: 15, weight: 26000, above20: true, altitude: 10000, vr: 115, v2: 113 },
+        { flaps: 15, weight: 28000, above20: true, altitude: 10000, vr: 120, v2: 118 },
+        { flaps: 15, weight: 29000, above20: true, altitude: 10000, vr: 123, v2: 120 },        
+        
+    ]
+)
+
+
+var LandingSchema = new mongoose.Schema({
+	weight: Number,
+	flaps: Number,
+	vApp: Number,
+	vRef: Number,
+	vGa: Boolean,
+});
+
+db.LandingData.insert(
+    [
+        //FLAPS 5
+        { weight: 18000, flaps: 5, vapp: 115, vref: 115, vga: 109 },
+        { weight: 20000, flaps: 5, vapp: 120, vref: 120, vga: 110 },
+        { weight: 22000, flaps: 5, vapp: 126, vref: 126, vga: 115 },
+        { weight: 24000, flaps: 5, vapp: 131, vref: 131, vga: 120 },
+        { weight: 26000, flaps: 5, vapp: 137, vref: 137, vga: 125 },
+        { weight: 28000, flaps: 5, vapp: 142, vref: 142, vga: 130 },
+        { weight: 29000, flaps: 5, vapp: 146, vref: 146, vga: 134 },
+        
+        //FLAPS 10
+        { weight: 18000, flaps: 10, vapp: 109, vref: 108, vga: 108 },
+        { weight: 20000, flaps: 10, vapp: 112, vref: 112, vga: 108 },
+        { weight: 22000, flaps: 10, vapp: 117, vref: 117, vga: 108 },
+        { weight: 24000, flaps: 10, vapp: 122, vref: 122, vga: 112 },
+        { weight: 26000, flaps: 10, vapp: 127, vref: 127, vga: 117 },
+        { weight: 28000, flaps: 10, vapp: 132, vref: 132, vga: 122 },
+        { weight: 29000, flaps: 10, vapp: 136, vref: 136, vga: 125 },
+        
+        //FLAPS 15
+        { weight: 18000, flaps: 15, vapp: 106, vref: 105, vga: 105 },
+        { weight: 20000, flaps: 15, vapp: 106, vref: 106, vga: 105 },
+        { weight: 22000, flaps: 15, vapp: 112, vref: 112, vga: 105 },
+        { weight: 24000, flaps: 15, vapp: 117, vref: 117, vga: 107 },
+        { weight: 26000, flaps: 15, vapp: 122, vref: 121, vga: 111 },
+        { weight: 28000, flaps: 15, vapp: 126, vref: 126, vga: 116 },
+        { weight: 29000, flaps: 15, vapp: 129, vref: 129, vga: 119 },
+        
+        //FLAPS 35
+        { weight: 18000, flaps: 35, vapp: 101, vref: 101, vga: 101 },
+        { weight: 20000, flaps: 35, vapp: 102, vref: 102, vga: 102 },
+        { weight: 22000, flaps: 35, vapp: 107, vref: 107, vga: 107 },
+        { weight: 24000, flaps: 35, vapp: 112, vref: 112, vga: 112 },
+        { weight: 26000, flaps: 35, vapp: 116, vref: 116, vga: 116 },
+        { weight: 28000, flaps: 35, vapp: 120, vref: 120, vga: 120 },
+        { weight: 29000, flaps: 35, vapp: 123, vref: 123, vga: 123 },        
+    ]
+)
+
+var mongoose = require('mongoose');
+
+var RunwaySchema = new mongoose.Schema({
+    icao: String,
+    runwayId: String,
+    runwayLengthFeet: Number,
+    runwayHeadingMagnetic: Number,
+    runwayHeadingTrue: Number
+})
+
+var AirportSchema = new mongoose.Schema({
+	icao: String,
+	iata: String,
+	airportName: String,
+	airportCity: String,
+	airportLat: Number,
+	airportLon: Number,
+	airportElevationFeet: Number,
+	runways: [RunwaySchema]
+});
+
+db.AirportData.insert(
+    [
+        { 
+            icao: "KDFW", 
+            iata: "DFW", 
+            airportName: "Dallas-Fort Worth International Airport", 
+            airportCity: "Dallas-Fort Worth, Texas, USA", 
+            airportLat: 32.8972316,
+            airportLon: -97.0376949,
+            airportElevationFeet: 607,
+            runways: [
+                {
+                    icao: "KDFW",
+                    runwayId: "17C",
+                    runwayLengthFeet: 13401,
+                    runwayHeadingMagnetic: 176,
+                    runwayHeadingTrue: 180
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "35C",
+                    runwayLengthFeet: 13401,
+                    runwayHeadingMagnetic: 356,
+                    runwayHeadingTrue: 000
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "17R",
+                    runwayLengthFeet: 13401,
+                    runwayHeadingMagnetic: 176,
+                    runwayHeadingTrue: 180
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "35L",
+                    runwayLengthFeet: 13401,
+                    runwayHeadingMagnetic: 267,
+                    runwayHeadingTrue: 270
+                },                
+                {
+                    icao: "KDFW",
+                    runwayId: "18L",
+                    runwayLengthFeet: 13400,
+                    runwayHeadingMagnetic: 176,
+                    runwayHeadingTrue: 180
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "36R",
+                    runwayLengthFeet: 13400,
+                    runwayHeadingMagnetic: 356,
+                    runwayHeadingTrue: 000
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "18R",
+                    runwayLengthFeet: 13400,
+                    runwayHeadingMagnetic: 176,
+                    runwayHeadingTrue: 180
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "36L",
+                    runwayLengthFeet: 13400,
+                    runwayHeadingMagnetic: 356,
+                    runwayHeadingTrue: 000
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "13R",
+                    runwayLengthFeet: 9301,
+                    runwayHeadingMagnetic: 135,
+                    runwayHeadingTrue: 139
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "31L",
+                    runwayLengthFeet: 9301,
+                    runwayHeadingMagnetic: 315,
+                    runwayHeadingTrue: 319
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "13L",
+                    runwayLengthFeet: 9000,
+                    runwayHeadingMagnetic: 131,
+                    runwayHeadingTrue: 135
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "31R",
+                    runwayLengthFeet: 9000,
+                    runwayHeadingMagnetic: 311,
+                    runwayHeadingTrue: 315
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "17L",
+                    runwayLengthFeet: 8500,
+                    runwayHeadingMagnetic: 176,
+                    runwayHeadingTrue: 180
+                },
+                {
+                    icao: "KDFW",
+                    runwayId: "35R",
+                    runwayLengthFeet: 8500,
+                    runwayHeadingMagnetic: 356,
+                    runwayHeadingTrue: 000
+                }                
+            ]
+        },    
+        { 
+            icao: "KIAH", 
+            iata: "IAH", 
+            airportName: "George Bush Intercontinental/Houston Airport", 
+            airportCity: "Houston, Texas, USA", 
+            airportLat: 29.9844444,
+            airportLon: -95.3414444,
+            airportElevationFeet: 96.4,
+            runways: [
+                {
+                    icao: "KIAH",
+                    runwayId: "15L",
+                    runwayLengthFeet: 12001,
+                    runwayHeadingMagnetic: 149,
+                    runwayHeadingTrue: 152
+                },
+                {
+                    icao: "KIAH",
+                    runwayId: "33R",
+                    runwayLengthFeet: 12001,
+                    runwayHeadingMagnetic: 329,
+                    runwayHeadingTrue: 332
+                },
+                {
+                    icao: "KIAH",
+                    runwayId: "9",
+                    runwayLengthFeet: 10000,
+                    runwayHeadingMagnetic: 087,
+                    runwayHeadingTrue: 090
+                },
+                {
+                    icao: "KIAH",
+                    runwayId: "27",
+                    runwayLengthFeet: 10000,
+                    runwayHeadingMagnetic: 267,
+                    runwayHeadingTrue: 270
+                },                
+                {
+                    icao: "KIAH",
+                    runwayId: "15R",
+                    runwayLengthFeet: 10000,
+                    runwayHeadingMagnetic: 149,
+                    runwayHeadingTrue: 152
+                },
+                {
+                    icao: "KIAH",
+                    runwayId: "33L",
+                    runwayLengthFeet: 10000,
+                    runwayHeadingMagnetic: 329,
+                    runwayHeadingTrue: 332
+                },
+                {
+                    icao: "KIAH",
+                    runwayId: "08R",
+                    runwayLengthFeet: 9402,
+                    runwayHeadingMagnetic: 087,
+                    runwayHeadingTrue: 090
+                },
+                {
+                    icao: "KIAH",
+                    runwayId: "26L",
+                    runwayLengthFeet: 9402,
+                    runwayHeadingMagnetic: 267,
+                    runwayHeadingTrue: 270
+                },
+                {
+                    icao: "KIAH",
+                    runwayId: "08L",
+                    runwayLengthFeet: 9000,
+                    runwayHeadingMagnetic: 087,
+                    runwayHeadingTrue: 090
+                },
+                {
+                    icao: "KIAH",
+                    runwayId: "26R",
+                    runwayLengthFeet: 9000,
+                    runwayHeadingMagnetic: 267,
+                    runwayHeadingTrue: 270
+                }                 
+            ]
+        },
+        { 
+            icao: "KHOU", 
+            iata: "HOU", 
+            airportName: "William P Hobby Airport", 
+            airportCity: "Houston, Texas, USA", 
+            airportLat: 29.6454167,
+            airportLon: -95.2788889,
+            airportElevationFeet: 46.3,
+            runways: [
+                {
+                    icao: "KHOU",
+                    runwayId: "4",
+                    runwayLengthFeet: 7602,
+                    runwayHeadingMagnetic: 041,
+                    runwayHeadingTrue: 044
+                },
+                {
+                    icao: "KHOU",
+                    runwayId: "22",
+                    runwayLengthFeet: 7602,
+                    runwayHeadingMagnetic: 221,
+                    runwayHeadingTrue: 224
+                },
+                {
+                    icao: "KHOU",
+                    runwayId: "13R",
+                    runwayLengthFeet: 7599,
+                    runwayHeadingMagnetic: 131,
+                    runwayHeadingTrue: 134
+                },
+                {
+                    icao: "KHOU",
+                    runwayId: "31L",
+                    runwayLengthFeet: 7599,
+                    runwayHeadingMagnetic: 311,
+                    runwayHeadingTrue: 314
+                },                
+                {
+                    icao: "KHOU",
+                    runwayId: "17",
+                    runwayLengthFeet: 6000,
+                    runwayHeadingMagnetic: 176,
+                    runwayHeadingTrue: 179
+                },
+                {
+                    icao: "KHOU",
+                    runwayId: "35",
+                    runwayLengthFeet: 6000,
+                    runwayHeadingMagnetic: 356,
+                    runwayHeadingTrue: 359
+                },
+                {
+                    icao: "KHOU",
+                    runwayId: "13L",
+                    runwayLengthFeet: 5148,
+                    runwayHeadingMagnetic: 131,
+                    runwayHeadingTrue: 134
+                },
+                {
+                    icao: "KHOU",
+                    runwayId: "31R",
+                    runwayLengthFeet: 5148,
+                    runwayHeadingMagnetic: 131,
+                    runwayHeadingTrue: 134
+                }
+            ]
+        },
+        { 
+            icao: "KAUS", 
+            iata: "AUS", 
+            airportName: "Austin-Bergstrom International Airport", 
+            airportCity: "Austin, Texas, USA", 
+            airportLat: 30.1945278,
+            airportLon: -97.6698889,
+            airportElevationFeet: 541.6,
+            runways: [
+                {
+                    icao: "KAUS",
+                    runwayId: "17R",
+                    runwayLengthFeet: 12250,
+                    runwayHeadingMagnetic: 173,
+                    runwayHeadingTrue: 179
+                },
+                {
+                    icao: "KHOU",
+                    runwayId: "35L",
+                    runwayLengthFeet: 12250,
+                    runwayHeadingMagnetic: 353,
+                    runwayHeadingTrue: 359
+                },
+                {
+                    icao: "KAUS",
+                    runwayId: "17L",
+                    runwayLengthFeet: 9000,
+                    runwayHeadingMagnetic: 173,
+                    runwayHeadingTrue: 179
+                },
+                {
+                    icao: "KAUS",
+                    runwayId: "35R",
+                    runwayLengthFeet: 9000,
+                    runwayHeadingMagnetic: 353,
+                    runwayHeadingTrue: 359
+                },                
+            ]
+        },
+        { 
+            icao: "KSAT", 
+            iata: "SAT", 
+            airportName: "San Antonio International Airport", 
+            airportCity: "San Antonio, Texas, USA", 
+            airportLat: 29.5339580,
+            airportLon: -98.4690571,
+            airportElevationFeet: 809.1,
+            runways: [
+                {
+                    icao: "KSAT",
+                    runwayId: "4",
+                    runwayLengthFeet: 8505,
+                    runwayHeadingMagnetic: 033,
+                    runwayHeadingTrue: 041
+                },
+                {
+                    icao: "KSAT",
+                    runwayId: "22",
+                    runwayLengthFeet: 8505,
+                    runwayHeadingMagnetic: 213,
+                    runwayHeadingTrue: 221
+                },
+                {
+                    icao: "KSAT",
+                    runwayId: "12R",
+                    runwayLengthFeet: 8502,
+                    runwayHeadingMagnetic: 124,
+                    runwayHeadingTrue: 132
+                },
+                {
+                    icao: "KSAT",
+                    runwayId: "30L",
+                    runwayLengthFeet: 8502,
+                    runwayHeadingMagnetic: 304,
+                    runwayHeadingTrue: 312
+                },
+                {
+                    icao: "KSAT",
+                    runwayId: "12L",
+                    runwayLengthFeet: 5519,
+                    runwayHeadingMagnetic: 124,
+                    runwayHeadingTrue: 132
+                },
+                {
+                    icao: "KSAT",
+                    runwayId: "30R",
+                    runwayLengthFeet: 5519,
+                    runwayHeadingMagnetic: 304,
+                    runwayHeadingTrue: 312
+                },                
+            ]
+        },
+        { 
+            icao: "KDAL", 
+            iata: "DAL", 
+            airportName: "Dallas Love Field Airport", 
+            airportCity: "Dallas, Texas, USA", 
+            airportLat: 32.8471122,
+            airportLon: -96.8517719,
+            airportElevationFeet: 486.9,
+            runways: [
+                {
+                    icao: "KDAL",
+                    runwayId: "13R",
+                    runwayLengthFeet: 8800,
+                    runwayHeadingMagnetic: 133,
+                    runwayHeadingTrue: 136
+                },
+                {
+                    icao: "KDAL",
+                    runwayId: "31L",
+                    runwayLengthFeet: 8800,
+                    runwayHeadingMagnetic: 313,
+                    runwayHeadingTrue: 316
+                },
+                {
+                    icao: "KDAL",
+                    runwayId: "13L",
+                    runwayLengthFeet: 7752,
+                    runwayHeadingMagnetic: 133,
+                    runwayHeadingTrue: 136
+                },
+                {
+                    icao: "KDAL",
+                    runwayId: "31R",
+                    runwayLengthFeet: 7752,
+                    runwayHeadingMagnetic: 313,
+                    runwayHeadingTrue: 316
+                },
+                {
+                    icao: "KDAL",
+                    runwayId: "18",
+                    runwayLengthFeet: 6147,
+                    runwayHeadingMagnetic: 183,
+                    runwayHeadingTrue: 186
+                },
+                {
+                    icao: "KDAL",
+                    runwayId: "36",
+                    runwayLengthFeet: 6147,
+                    runwayHeadingMagnetic: 003,
+                    runwayHeadingTrue: 006
+                },                
+            ]
+        },
+        { 
+            icao: "KELP", 
+            iata: "ELP", 
+            airportName: "El Paso International Airport", 
+            airportCity: "El Paso, Texas, USA", 
+            airportLat: 31.8073333,
+            airportLon: -106.3763611,
+            airportElevationFeet: 3961.7,
+            runways: [
+                {
+                    icao: "KELP",
+                    runwayId: "4",
+                    runwayLengthFeet: 12020,
+                    runwayHeadingMagnetic: 042,
+                    runwayHeadingTrue: 050
+                },
+                {
+                    icao: "KELP",
+                    runwayId: "22",
+                    runwayLengthFeet: 12020,
+                    runwayHeadingMagnetic: 222,
+                    runwayHeadingTrue: 230
+                },
+                {
+                    icao: "KELP",
+                    runwayId: "8R",
+                    runwayLengthFeet: 9027,
+                    runwayHeadingMagnetic: 085,
+                    runwayHeadingTrue: 093
+                },
+                {
+                    icao: "KELP",
+                    runwayId: "26L",
+                    runwayLengthFeet: 9027,
+                    runwayHeadingMagnetic: 265,
+                    runwayHeadingTrue: 273
+                },
+                {
+                    icao: "KELP",
+                    runwayId: "8L",
+                    runwayLengthFeet: 5500,
+                    runwayHeadingMagnetic: 085,
+                    runwayHeadingTrue: 093
+                },
+                {
+                    icao: "KELP",
+                    runwayId: "26R",
+                    runwayLengthFeet: 5500,
+                    runwayHeadingMagnetic: 265,
+                    runwayHeadingTrue: 273
+                },               
+            ]
+        },
+        { 
+            icao: "KLBB", 
+            iata: "LBB", 
+            airportName: "Lubbock Preston Smith International Airport", 
+            airportCity: "Lubbock, Texas, USA", 
+            airportLat: 33.6636667,
+            airportLon: -101.8205556,
+            airportElevationFeet: 3282.4,
+            runways: [
+                {
+                    icao: "KLBB",
+                    runwayId: "17R",
+                    runwayLengthFeet: 11500,
+                    runwayHeadingMagnetic: 171,
+                    runwayHeadingTrue: 180
+                },
+                {
+                    icao: "KLBB",
+                    runwayId: "35L",
+                    runwayLengthFeet: 11500,
+                    runwayHeadingMagnetic: 351,
+                    runwayHeadingTrue: 360
+                },
+                {
+                    icao: "KLBB",
+                    runwayId: "8",
+                    runwayLengthFeet: 8003,
+                    runwayHeadingMagnetic: 080,
+                    runwayHeadingTrue: 089
+                },
+                {
+                    icao: "KLBB",
+                    runwayId: "26",
+                    runwayLengthFeet: 8003,
+                    runwayHeadingMagnetic: 260,
+                    runwayHeadingTrue: 269
+                },
+                {
+                    icao: "KLBB",
+                    runwayId: "17L",
+                    runwayLengthFeet: 2891,
+                    runwayHeadingMagnetic: 171,
+                    runwayHeadingTrue: 180
+                },
+                {
+                    icao: "KLBB",
+                    runwayId: "35R",
+                    runwayLengthFeet: 2891,
+                    runwayHeadingMagnetic: 351,
+                    runwayHeadingTrue: 360
+                },               
+            ]
+        },
+        { 
+            icao: "KMAF", 
+            iata: "MAF", 
+            airportName: "Midland International Airport", 
+            airportCity: "Midland, Texas, USA", 
+            airportLat: 31.9425278,
+            airportLon: -102.2019167,
+            airportElevationFeet: 2872.1,
+            runways: [
+                {
+                    icao: "KMAF",
+                    runwayId: "16R",
+                    runwayLengthFeet: 9501,
+                    runwayHeadingMagnetic: 166,
+                    runwayHeadingTrue: 175
+                },
+                {
+                    icao: "KMAF",
+                    runwayId: "34L",
+                    runwayLengthFeet: 9501,
+                    runwayHeadingMagnetic: 346,
+                    runwayHeadingTrue: 355
+                },
+                {
+                    icao: "KMAF",
+                    runwayId: "10",
+                    runwayLengthFeet: 8302,
+                    runwayHeadingMagnetic: 105,
+                    runwayHeadingTrue: 114
+                },
+                {
+                    icao: "KMAF",
+                    runwayId: "28",
+                    runwayLengthFeet: 8302,
+                    runwayHeadingMagnetic: 285,
+                    runwayHeadingTrue: 294
+                },
+                {
+                    icao: "KMAF",
+                    runwayId: "4",
+                    runwayLengthFeet: 8302,
+                    runwayHeadingMagnetic: 171,
+                    runwayHeadingTrue: 180
+                },
+                {
+                    icao: "KMAF",
+                    runwayId: "22",
+                    runwayLengthFeet: 2891,
+                    runwayHeadingMagnetic: 351,
+                    runwayHeadingTrue: 360
+                },
+                {
+                    icao: "KMAF",
+                    runwayId: "16L",
+                    runwayLengthFeet: 4247,
+                    runwayHeadingMagnetic: 168,
+                    runwayHeadingTrue: 177
+                },
+                {
+                    icao: "KMAF",
+                    runwayId: "34R",
+                    runwayLengthFeet: 4247,
+                    runwayHeadingMagnetic: 348,
+                    runwayHeadingTrue: 357
+                },                 
+            ]
+        },
+        { 
+            icao: "KAMA", 
+            iata: "AMA", 
+            airportName: "Rick Husband Amarillo International Airport", 
+            airportCity: "Amarillo, Texas, USA", 
+            airportLat: 35.2193611,
+            airportLon: -101.7059167,
+            airportElevationFeet: 3606.6,
+            runways: [
+                {
+                    icao: "KAMA",
+                    runwayId: "4",
+                    runwayLengthFeet: 13502,
+                    runwayHeadingMagnetic: 038,
+                    runwayHeadingTrue: 046
+                },
+                {
+                    icao: "KAMA",
+                    runwayId: "22",
+                    runwayLengthFeet: 13502,
+                    runwayHeadingMagnetic: 218,
+                    runwayHeadingTrue: 226
+                },
+                {
+                    icao: "KAMA",
+                    runwayId: "13",
+                    runwayLengthFeet: 7901,
+                    runwayHeadingMagnetic: 129,
+                    runwayHeadingTrue: 137
+                },
+                {
+                    icao: "KAMA",
+                    runwayId: "31",
+                    runwayLengthFeet: 7901,
+                    runwayHeadingMagnetic: 309,
+                    runwayHeadingTrue: 317
+                }
+            ]
+        },
+        { 
+            icao: "KHRL", 
+            iata: "HRL", 
+            airportName: "Valley International Airport", 
+            airportCity: "Harlingen, Texas, USA", 
+            airportLat: 26.2271111,
+            airportLon: -97.6551389,
+            airportElevationFeet: 36.3,
+            runways: [
+                {
+                    icao: "KHRL",
+                    runwayId: "17R",
+                    runwayLengthFeet: 8301,
+                    runwayHeadingMagnetic: 176,
+                    runwayHeadingTrue: 181
+                },
+                {
+                    icao: "KHRL",
+                    runwayId: "35L",
+                    runwayLengthFeet: 8301,
+                    runwayHeadingMagnetic: 356,
+                    runwayHeadingTrue: 001
+                },
+                {
+                    icao: "KHRL",
+                    runwayId: "13",
+                    runwayLengthFeet: 7257,
+                    runwayHeadingMagnetic: 131,
+                    runwayHeadingTrue: 136
+                },
+                {
+                    icao: "KHRL",
+                    runwayId: "31",
+                    runwayLengthFeet: 7257,
+                    runwayHeadingMagnetic: 311,
+                    runwayHeadingTrue: 316
+                },
+                {
+                    icao: "KHRL",
+                    runwayId: "17L",
+                    runwayLengthFeet: 5949,
+                    runwayHeadingMagnetic: 176,
+                    runwayHeadingTrue: 181
+                },
+                {
+                    icao: "KHRL",
+                    runwayId: "35R",
+                    runwayLengthFeet: 5949,
+                    runwayHeadingMagnetic: 356,
+                    runwayHeadingTrue: 001
+                }                
+            ]
+        },
+        { 
+            icao: "KMFE", 
+            iata: "MFE", 
+            airportName: "Mc Allen Miller International Airport", 
+            airportCity: "Mc Allen, Texas, USA", 
+            airportLat: 26.1758333,
+            airportLon: -98.2386111,
+            airportElevationFeet: 107.3,
+            runways: [
+                {
+                    icao: "KMFE",
+                    runwayId: "14",
+                    runwayLengthFeet: 7120,
+                    runwayHeadingMagnetic: 137,
+                    runwayHeadingTrue: 141
+                },
+                {
+                    icao: "KMFE",
+                    runwayId: "32",
+                    runwayLengthFeet: 7120,
+                    runwayHeadingMagnetic: 317,
+                    runwayHeadingTrue: 321
+                },
+                {
+                    icao: "KMFE",
+                    runwayId: "18",
+                    runwayLengthFeet: 2638,
+                    runwayHeadingMagnetic: 185,
+                    runwayHeadingTrue: 189
+                },
+                {
+                    icao: "KMFE",
+                    runwayId: "36",
+                    runwayLengthFeet: 2638,
+                    runwayHeadingMagnetic: 005,
+                    runwayHeadingTrue: 009
+                },
+            ]
+        },
+        { 
+            icao: "KCRP", 
+            iata: "CRP", 
+            airportName: "Corpus Christi International Airport", 
+            airportCity: "Corpus Christi, Texas, USA", 
+            airportLat: 27.7721944,
+            airportLon: -97.5024167,
+            airportElevationFeet: 46.1,
+            runways: [
+                {
+                    icao: "KCRP",
+                    runwayId: "13",
+                    runwayLengthFeet: 7510,
+                    runwayHeadingMagnetic: 132,
+                    runwayHeadingTrue: 136
+                },
+                {
+                    icao: "KCRP",
+                    runwayId: "31",
+                    runwayLengthFeet: 7510,
+                    runwayHeadingMagnetic: 312,
+                    runwayHeadingTrue: 316
+                },
+                {
+                    icao: "KCRP",
+                    runwayId: "18",
+                    runwayLengthFeet: 6080,
+                    runwayHeadingMagnetic: 175,
+                    runwayHeadingTrue: 179
+                },
+                {
+                    icao: "KCRP",
+                    runwayId: "36",
+                    runwayLengthFeet: 6080,
+                    runwayHeadingMagnetic: 355,
+                    runwayHeadingTrue: 359
+                },
+            ]
+        },
+        { 
+            icao: "KGRK", 
+            iata: "GRK", 
+            airportName: "Robert Gray Army Airfield", 
+            airportCity: "Fort Hood (Killeen), Texas, USA", 
+            airportLat: 31.0672500,
+            airportLon: -97.8289167,
+            airportElevationFeet: 1015.3,
+            runways: [
+                {
+                    icao: "KGRK",
+                    runwayId: "15",
+                    runwayLengthFeet: 10000,
+                    runwayHeadingMagnetic: 150,
+                    runwayHeadingTrue: 157
+                },
+                {
+                    icao: "KGRK",
+                    runwayId: "33",
+                    runwayLengthFeet: 10000,
+                    runwayHeadingMagnetic: 330,
+                    runwayHeadingTrue: 337
+                }
+            ]
+        },
+        { 
+            icao: "KLRD", 
+            iata: "LRD", 
+            airportName: "Laredo International Airport", 
+            airportCity: "Laredo, Texas, USA", 
+            airportLat: 27.5441944,
+            airportLon: -99.4615833,
+            airportElevationFeet: 508,
+            runways: [
+                {
+                    icao: "KLRD",
+                    runwayId: "17R",
+                    runwayLengthFeet: 8743,
+                    runwayHeadingMagnetic: 175,
+                    runwayHeadingTrue: 183
+                },
+                {
+                    icao: "KLRD",
+                    runwayId: "35L",
+                    runwayLengthFeet: 8743,
+                    runwayHeadingMagnetic: 355,
+                    runwayHeadingTrue: 003
+                },
+                {
+                    icao: "KLRD",
+                    runwayId: "17L",
+                    runwayLengthFeet: 8236,
+                    runwayHeadingMagnetic: 175,
+                    runwayHeadingTrue: 183
+                },
+                {
+                    icao: "KLRD",
+                    runwayId: "35R",
+                    runwayLengthFeet: 8236,
+                    runwayHeadingMagnetic: 355,
+                    runwayHeadingTrue: 003
+                },
+                {
+                    icao: "KLRD",
+                    runwayId: "14",
+                    runwayLengthFeet: 5927,
+                    runwayHeadingMagnetic: 139,
+                    runwayHeadingTrue: 147
+                },
+                {
+                    icao: "KLRD",
+                    runwayId: "32",
+                    runwayLengthFeet: 5927,
+                    runwayHeadingMagnetic: 319,
+                    runwayHeadingTrue: 327
+                }                
+            ]
+        }         
+   ]
+)
+
